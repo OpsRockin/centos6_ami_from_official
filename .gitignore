@@ -9,5 +9,5 @@ Session.vim
 *~
 
 # Packer
-/env.sh
+/env*.sh
 /ec2_amazon-ebs.pem
