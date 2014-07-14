@@ -1,0 +1,34 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "ap-northeast-1",
+      "source_ami": "ami-81294380",
+      "instance_type": "c3.2xlarge",
+      "ssh_username": "root",
+      "ssh_timeout": "10m",
+      "ami_name": "CentOS 6.5 from Official MP {{timestamp}}"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "bootstrap.sh"
+      ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "ja/set_jst.sh"
+      ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "cleanup.sh"
+      ]
+    }
+  ]
+}
